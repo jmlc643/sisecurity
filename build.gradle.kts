@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.upao.pe"
-version = "1.0.0-SNAPSHOT"
+version = "1.5.0"
 
 java {
     toolchain {

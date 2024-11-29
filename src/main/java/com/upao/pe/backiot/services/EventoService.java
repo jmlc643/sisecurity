@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -25,7 +26,7 @@ public class EventoService {
 
     // Cambiar el estado de un LED
     public Evento crearEvento(String descripcion) {
-        return eventoRepository.save(new Evento(null, descripcion, new Date()));
+        return eventoRepository.save(new Evento(null, descripcion, LocalDateTime.now()));
     }
 
     private EventoDTO returnEventoDTO(Evento evento){
