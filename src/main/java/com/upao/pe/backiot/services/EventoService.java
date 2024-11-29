@@ -3,6 +3,7 @@ package com.upao.pe.backiot.services;
 import com.upao.pe.backiot.dto.EventoDTO;
 import com.upao.pe.backiot.models.Evento;
 import com.upao.pe.backiot.repos.EventoRepository;
+import com.upao.pe.backiot.util.DateConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,6 +31,6 @@ public class EventoService {
     }
 
     private EventoDTO returnEventoDTO(Evento evento){
-        return new EventoDTO(evento.getIdEvento(), evento.getDescripcion(), dateFormat.format(evento.getFecha()));
+        return new EventoDTO(evento.getIdEvento(), evento.getDescripcion(), dateFormat.format(DateConverter.toDate(evento.getFecha())));
     }
 }
